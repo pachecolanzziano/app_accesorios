@@ -1,0 +1,50 @@
+[
+ {
+  "id": 0,
+  "firstName": "Pepito",
+  "lastName": "Pérez",
+  "nick": "Pepito",
+  "email": "pepito@gmail.com",
+  "pass": "contra",
+  "address": "calle123",
+  "type": "vendedor",
+  "image": "default.jpg",
+  "status": "active"
+ },
+ {
+  "id": 2,
+  "firstName": "",
+  "lastName": "",
+  "nick": "Laura",
+  "email": "laura@correo.com",
+  "pass": "$2a$10$nWzXpQJyCoW.4huYeUyUjOJiNirf552i9FvBMJAKj9U2RcXybXGti",
+  "address": "",
+  "type": "client",
+  "image": "default.jpg",
+  "status": "active"
+ },
+ {
+  "id": 3,
+  "firstName": "",
+  "lastName": "",
+  "nick": "Ernesto Pérez",
+  "email": "ernestino@correo.com",
+  "pass": "$2a$10$oaA8V4L9LhBfr1Gp8SmIKOTlbfqEqA7aDhA3CBfiHMQGEbe24m.tC",
+  "address": "",
+  "type": "vendedor",
+  "image": "1650313517466.png",
+  "status": "active"
+ },
+ {
+  "id": 4,
+  "firstName": "",
+  "lastName": "",
+  "nick": "daseva94",
+  "email": "daseva94@gmail.com",
+  "pass": "$2a$10$iov7o2YUkCR9GTIZ9eGYFeWbgoGsSr8vpK6YroJ.APuaFv1MZ8ZSS",
+  "address": "",
+  "type": "client",
+  "image": "default.jpg",
+  "status": "active"
+ }
+]

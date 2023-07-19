@@ -1,0 +1,95 @@
+
+
+/* login */
+
+.contentLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.title-login{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+.formLoginUser{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    border: #777 solid;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 40px;
+}
+.formLoginUser input[type="text"], .formLoginUser input[type="password"], .formLoginUser input[type="email"] {
+    border: none;
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    background-color: rgb(245, 245, 245);
+}
+
+.formLoginUser button{
+    margin-top: 15px;
+    background-color: #34DFB6;
+    border: none;
+    border-radius: 15px;
+    width: 200px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.formloginUser input[type="checkbox"] {
+    align-self: baseline;
+    margin-top: 5px;
+}
+.formloginUser input::placeholder{
+    padding-left: 15px;
+    font-size: 16px;
+}
+.check{
+    align-self: baseline;
+    padding-left: 20px;
+}
+.error{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(230, 109, 109);
+}
+
+/* login */
+
+
+@media (min-width:768px ) {
+
+.formLoginUser{
+    width: 80%;
+}
+.check{
+    align-self: baseline;
+    padding-left: 40px;
+}
+}
+@media (min-width:1200px ) {
+.formLoginUser{
+    width: 50%;
+}
+.check{
+    align-self: baseline;
+    padding-left: 35px;
+}
+
+}

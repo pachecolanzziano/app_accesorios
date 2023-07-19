@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- metas and lynks -->
+    <%- include('./partials/metasBasics') %>
+    <!-- metas and lynks -->
+    <link rel="stylesheet" href="/css/product/componentCard.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+
+    <!-- header -->
+    <%- include('./partials/header') %>
+    <!-- header -->
+
+    <main>
+
+        <div class="slider">
+            <% if (productPro) { %>
+                <div class="up">
+                    <div><img src="/img/products/<%= productPro.image %> " alt="imagen de teléfono"  srcset=""></div>
+                </div>
+                <div class="down">
+                    <div class="nombre">
+                        <label><%= productPro.name %></label>
+                        <label class="precio"><%= "- $" + productPro.price %></label>
+                    </div>
+                    <div>
+                      
+                    </div>
+                </div>
+                <div><a href="/product/detail/<%= productPro.id %>">Ver más</a></div>
+            <% } %>
+            
+        </div>
+        <section class="checks">
+            <div> <input type="radio" name="radio" id=""> </div>
+            <div> <input type="radio" name="radio" id=""> </div>
+            <div> <input type="radio" name="radio" id=""> </div>
+        </section>
+
+        <section class="destacados">
+            <div class="title-destacados">
+                DESTACADOS
+            </div>
+            
+            <% if (locals.products) { %>
+                <%- include('./partials/componentCard',{products})  %> 
+            <% } %>
+            
+        </section>
+    </main>
+
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+    <!-- footer -->
+
+</body>
+</html>

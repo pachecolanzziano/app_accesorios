@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <!-- metas and lynks -->
+  <%- include('../partials/metasBasics') %>
+    <!-- metas and lynks -->
+
+    <link rel="stylesheet" href="/css/product/register.css" />
+    <title>Inicio</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <%- include('../partials/header') %>
+    <!-- header -->
+
+
+    <!-- NOTA IMPORTANTE: se debe terminar de estilar -->
+    <!-- NOTA IMPORTANTE: se debe terminar de agregar o eliminar campos, volverlos más específicos -->
+    <main>
+      <div class="container-product-register">
+        <div class="title-register">
+          REGISTRAR PRODUCTO:
+        </div>
+        <form class="form-product-register" action="/product/register" method="POST" enctype="multipart/form-data">
+
+          <div class="errorsList">
+            <% if (typeof errorsList !='undefined' ) { %>
+              <% errorsList.forEach(element=> { %>
+                <div class="error">- <%= element.msg %>
+                </div>
+              <% }) %>
+            <% } %>
+          </div>
+
+          <input type="text" name="name" id="name" placeholder="Nombre del producto">
+
+          <select class="select" name="category" id="category">
+            <option value="">Categoría:</option>
+          </select>
+
+          <input type="text" name="price" placeholder="Precio">
+
+          <snap class="file">Imagen del producto:<input type="file"  class="input-file" name="imgCel" id="imgCel"
+              accept="image/jpg, image/jpeg, image/png, image/gif"></snap>
+          <div class="btn-content"><button type="submit">REGISTRAR</button></div>
+        </form>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+      <!-- footer -->
+      <script src="/js/product/register.js"></script>
+</body>
+
+</html>

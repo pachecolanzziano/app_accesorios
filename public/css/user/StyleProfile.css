@@ -1,0 +1,111 @@
+/* Register */
+
+.contentProfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     margin: auto;
+    width: 50%;
+        padding: 10px;
+}
+
+.titleProfile {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+
+.formUpdate {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #777 solid;
+    border-radius: 10px;
+    padding: 15px;
+}
+.imgProfile {
+    width: 50%
+}
+.formUpdate input[type="text"],
+.formUpdate input[type="email"] {
+    border: none;
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    background-color: rgb(245, 245, 245);
+}
+
+.formUpdate button {
+    margin-top: 15px;
+    background-color: #34DFB6;
+    border: none;
+    border-radius: 15px;
+    width: 200px;
+    height: 35px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.formUpdate input[type="checkbox"] {
+    align-self: baseline;
+    margin-top: 5px;
+}
+
+.formUpdate input::placeholder {
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+.check {
+    align-self: baseline;
+    padding-left: 20px;
+}
+
+.input-file {
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.file{
+    width: 90%;
+}
+
+.errorsList{
+    width: 90%;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px;
+    margin-bottom: 5px;
+    color: rgb(230, 109, 109);
+}
+
+/* Register */
+
+
+@media (min-width:768px) {
+    .formUpdate {
+        width: 100%;
+    }
+}
+
+@media (min-width:1200px) {
+    .formUpdate {
+        width: 80%;
+    }
+
+    .check {
+        align-self: baseline;
+        padding-left: 35px;
+    }
+
+}

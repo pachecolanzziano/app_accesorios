@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+    <!-- metas and lynks -->
+    <%- include('../partials/metasBasics') %>
+    <!-- metas and lynks -->
+
+    <link rel="stylesheet" href="/css/user/styleRegister.css">
+    <title>Registrarme</title>
+</head>
+
+<body>
+
+    <!-- header -->
+    <%- include('../partials/header') %>
+    <!-- header -->
+
+
+    <main>
+
+        <div class="contentRegister">
+            <div class="title-register">
+                CREA TU CUENTA
+            </div>
+            <form class="formRegisterUser" action="/user/register" method="POST" enctype="multipart/form-data">
+                <div class="title-register2">INFORMACIÓN PERSONAL</div>
+
+                <div class="errorsList"><% if (typeof errorsList !='undefined') { %>
+                    <% errorsList.forEach(element => { %>
+                        <div class="error">- <%= element.msg %></div>
+                    <% }) %> 
+                    <% } %> 
+                </div>
+
+                <input type="text" name="nick" id="nick" placeholder="Ingresa tu usuario">
+                <input type="email" name="email" id="email" placeholder="Ingresa tu correo">
+                <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
+                <input type="password" name="passConfirm" id="passConfirm" placeholder="Confirma tu contraseña">
+                <snap class="file">Imagen de perfil:<input class="input-file" name="img-perfil"  id="img-profile" type="file"></snap>
+                <div class="check"><input type="checkbox" name="terminos" id="terminos"> <label for="terminos">Aceptar términos y condiciones</label></div>
+                <div class="check"><input type="checkbox" name="subscription" id="subscription"><label for="ofertas">Deseo recibir ofertas en mi correo</label> </div>
+                <button type="submit">Registrarme</button>
+            </form>
+        </div>
+
+    </main>
+
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+    <!-- footer -->
+<script src="/js/user/register.js"></script>
+</body>
+
+</html>

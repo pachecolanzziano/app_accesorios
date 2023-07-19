@@ -1,0 +1,203 @@
+.marca{
+    text-decoration: none;
+    color: #0DA2E0;
+    align-self: flex-start;
+}
+.div-marca{
+    font-weight: 500;
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+.img img{
+    width: 100%;
+}
+.img{
+    width: 60%;
+}
+
+.nombre{
+    font-size: 28px;
+    font-weight: 600;
+}
+.container-detail{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.precio{
+    color:#FF9900;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.btn-comprar, .btn-editar{
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #41b499;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #23233D;
+    font-weight: 600;
+    background: #34DFB6;
+    margin-bottom: 20px;
+}
+.btn-agregar, .btn-eliminar{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #23233D;
+    font-weight: 600;
+}
+.caracts{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F1F0F0;
+    border-radius: 20px;
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 85%;
+    margin: auto;
+
+}
+.title-caract{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.dot {
+    height: 20px;
+    width: 20px;
+    background-color: #FF9900;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .caracteristicas{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    color: #526b79;
+  }
+  .valor{
+      color: #23233D;
+      margin-left: 10px;
+  }
+
+
+
+  
+  /* interes */
+  
+  
+.title-interes{
+    text-align: center;
+    line-height: 28px;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+
+.interes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item-interes{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.item-interes img{
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+}
+
+
+.interes .item-interes .precio{
+    color: #FF9900;
+    margin-top: 5px;
+}
+.interes .nombre a{
+    text-decoration: none;
+    color: #000;
+    text-decoration-line: none;
+    margin-top: 5px;
+}
+.interes .nombre{
+    text-align: center;
+}
+
+  /* interes */
+
+  @media (min-width: 768px) {
+      .container-detail .img{
+          width: 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+    .interes{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-detail{
+        width: 50%;
+    }
+    .caracts{
+        width: 30%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    main{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .interes{
+        width: 100%;
+    }
+    .img img{
+        width: 70%;
+    }
+    .item-destacado img{
+        width: 50%;
+    }
+}

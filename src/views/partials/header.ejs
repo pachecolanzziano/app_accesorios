@@ -1,0 +1,49 @@
+<header>
+  <div class="navBar">
+    <div class="menuBurguer"><i class="fa-solid fa-bars"></i></div>
+
+    <div class="logo">
+      <a href="/"><img src="/img/header-logo.png" alt="logo"></a>
+    </div>
+
+    <ul class="content-right">
+      <li class="user">
+        <img src="/img/icons/icon-user.png">
+        <ul class="login-register">
+          <% if ( locals.isLogged && (userLogged.type_id==1 || userLogged.type_id==3)) { %>
+            <li>Hola, <%= userLogged.nick %>
+            </li>
+            <snap class="div-line"></snap>
+            <li> <a href="/product/register">Registrar Producto</a> </li>
+            <snap class="div-line"></snap>
+            <li> <a href="/user/login">Mi cuenta</a> </li>
+            <snap class="div-line"></snap>
+            <li> <a href="/user/logout">Logout</a> </li>
+            <snap class="div-line"></snap>
+            <% }else if ( locals.isLogged) { %>
+
+              <li>Hola, <%= userLogged.nick %>
+              </li>
+              <snap class="div-line"></snap>
+              <li> <a href="/user/login">Mi cuenta</a> </li>
+              <snap class="div-line"></snap>
+              <li> <a href="/user/logout">Logout</a> </li>
+              <snap class="div-line"></snap>
+
+
+              <% } else { %>
+                <li> <a href="/user/login">Iniciar Sesión</a> </li>
+                <snap class="div-line"></snap>
+                <li><a href="/user/register">Registrarme</a> </li>
+
+                <% } %>
+        </ul>
+
+      </li>
+      <li class="search"><a href="/product/categories"><img src="/img/icons/icon-search.png"></a></li>
+      <li class="carShop"><a href="/product/shopingCart"><img src="/img/icons/icon-shoppingCart.png"></a></li>
+
+    </ul>
+
+  </div>
+</header>

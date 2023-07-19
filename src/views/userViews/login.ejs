@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <!-- metas and lynks -->
+  <%- include('../partials/metasBasics') %>
+    <!-- metas and lynks -->
+
+    <link rel="stylesheet" href="/css/user/styleLogin.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <%- include('../partials/header') %>
+    <!-- header -->
+
+    <main>
+
+      <div class="contentLogin">
+        <div class="title-login">
+          INICIAR SESIÓN
+        </div>
+        <form class="formLoginUser" action="/user/login" method="POST">
+
+          <input type="email" name="email" placeholder="Ingresa tu email">
+          <% if (typeof errors !='undefined' ) { %>
+            <% if (errors.tipo=='email' ) { %>
+              <div class="error">
+                <%= errors.msg %>
+              </div>
+              <% } %>
+                <% } %>
+                  <input type="password" name="pass" placeholder="Ingresa tu contraseña">
+                  <% if (typeof errors !='undefined' ) { %>
+
+                    <% if (errors.tipo=='pass' ) { %>
+                      <div class="error">
+                        <%= errors.msg %>
+                      </div>
+                      <% } %>
+
+
+                        <% } %>
+                          <div class="check"><input type="checkbox" name="recuerdame" id="recuerdame">
+                            <label for="recuerdame"> Mantener sesión
+                            </label>
+                          </div>
+                          <button type="submit">Entrar</button>
+        </form>
+
+      </div>
+
+    </main>
+
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+      <!-- footer -->
+
+</body>
+
+</html>

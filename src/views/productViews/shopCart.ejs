@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <!-- metas and lynks -->
+  <%- include('../partials/metasBasics') %>
+    <!-- metas and lynks -->
+
+    <link rel="stylesheet" href="/css/product/styleShopCart.css">
+
+    <link rel="stylesheet" href="/css/product/componentCard.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <%- include('../partials/header') %>
+    <!-- header -->
+    <div class="shoppingCard">
+
+      <div class="content-products">
+        <div class="title-shopping-card">MIS PRODUCTOS</div>
+        <div class="card-product">
+          <img class="img-card" src="/img/home-01.png" alt="">
+          <span class="name-product">nombre del produto samsung galaxy note 110</span>
+          <span class="price-product">7.000.000</span>
+          <button class="btn-eliminar">Eliminar</button>
+        </div>
+        <div class="card-product">
+          <img class="img-card" src="/img/home-01.png" alt="">
+          <span class="name-product">nombre del produto</span>
+          <span class="price-product">65000</span>
+          <button class="btn-eliminar">Eliminar</button>
+        </div>
+        <div class="card-product">
+          <img class="img-card" src="/img/home-01.png" alt="">
+          <span class="name-product">nombre del produto</span>
+          <span class="price-product">Precio</span>
+          <button class="btn-eliminar">Eliminar</button>
+        </div>
+      </div>
+      
+      <div class="content-info">
+        <div class="card-info">
+          <div class="item-card">
+            <span class="total-texto">Total:</span>
+            <span class="total-precio">10.000.000</span>
+          </div>
+          <button class="comprar">Realizar Compra</button>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!--carrusel-->
+    <div class="text-title">También te podría interesar </div>
+
+    <% if (locals.products) { %>
+      <%- include('../partials/componentCard',{products}) %>
+        <% } %>
+
+
+          <!-- footer -->
+          <%- include('../partials/footer') %>
+            <!-- footer -->
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+
+/* Categorías-filtros */
+
+.form-filters{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.filter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5px;
+  /* border: solid 1px rgb(155, 155, 155); */
+}
+
+.title{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.item{
+  margin-left: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.item input{
+  width:20px;
+  height:20px;
+  margin-bottom: 7px;
+}
+
+.btn-filtrar{
+  margin-top: 15px;
+    background-color: #34DFB6;
+    border: none;
+    border-radius: 15px;
+    width: 200px;
+    height: 35px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.title-form{
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  /* border-bottom: solid 1px rgb(155, 155, 155); */
+}
+/* Categorías-filtros */
+
+/* Categorías- items */
+
+.content-cels{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-cels{
+  text-align: center;
+  line-height: 28px;
+  font-weight: 600;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.item-cel{
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.item-cel img{
+  border-radius: 20px 20px 0px 0px;
+  width: 100%;
+}
+
+.item-destacado .precio{
+  color: #FF9900;
+  margin-top: 5px;
+}
+/* Categorías- items */
+
+
+@media (min-width: 768px) {
+  .filter{
+    width: 50%;
+  }
+  .form-filters{
+    width: 80%;
+    margin: auto;
+    align-items: stretch;
+  }
+
+  .title-cels{
+    font-size: 40px;
+}
+.content-cels{
+  width: 50%;
+  margin: auto;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+}
+@media (min-width: 1200px){
+  .filter{
+    width: 25%;
+    /* border-right: 1px solid rgb(155, 155, 155); */
+    /* border-left: 1px solid rgb(155, 155, 155); */
+
+  }
+  .form-filters{
+    width: 80%;
+    margin: auto;
+  }
+  .content-cels{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+}
+  .title-cels{
+    width: 100%;
+    margin-bottom: 40px;
+}
+  .item-cel{
+    width: 26%;
+    margin: auto;
+    align-self: stretch;
+}
+}

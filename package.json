@@ -1,0 +1,38 @@
+{
+  "name": "projectsprint",
+  "version": "1.0.0",
+  "description": "Producto/Servicio: Teléfonos móviles(Usados). Nosotros somos quienes compramos y reacondicionamos los equipos para la venta, cumpliendo con estándares de calidad y seguridad.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoZambranoDev/Grupo_5_2CHANCE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoZambranoDev/Grupo_5_2CHANCE/issues"
+  },
+  "homepage": "https://github.com/LeoZambranoDev/Grupo_5_2CHANCE#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "install": "^0.13.0",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.19.2",
+    "sequelize-cli": "^6.4.1"
+  }
+}

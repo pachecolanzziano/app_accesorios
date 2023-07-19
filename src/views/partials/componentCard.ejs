@@ -1,0 +1,18 @@
+<section class="content-cards">
+
+    <% if (locals.products) { %>
+
+        <% products.forEach(element => { %>
+         
+            <div class="card">
+                <img src="/img/products/<%= element.image %>"  alt="img product">
+                <div class="nombre"><%= element.name %> </div>
+                <div class="precio"><%= element.price %> </div>
+                <a class="enlace" href="/product/detail/<%= element.id %>" >Ver detalles</a>
+            </div>
+
+        <% }) %>
+     
+    <% } %>
+
+</section>
