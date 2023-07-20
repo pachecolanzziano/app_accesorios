@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
   <!-- metas and lynks -->
   <%- include('../partials/metasBasics') %>
     <!-- metas and lynks -->
-
     <link rel="stylesheet" href="/css/product/detalle.css" />
     <link rel="stylesheet" href="/css/product/componentCard.css">
     <title>Inicio</title>
 </head>
 
 <body>
-
   <!-- header -->
   <%- include('../partials/header') %>
     <!-- header -->
-
     <main>
-
       <div class="container-detail">
         <div class="div-marca">
-          <a class="marca" href="/product/detail/<%= product.id %>"> </a>
+          <a class="marca" href="/product/detail/<%= product.id %>"></a>
         </div>
         <div class="nombre">
           <%= product.name %>
@@ -60,8 +54,8 @@
         </div>
 
         <% if (locals.products) { %>
-          <%- include('../partials/componentCard',{products}) %>
-            <% } %>
+          <%- include('../partials/componentCard',{ products }) %>
+            <% }%>
 
 
       </section>

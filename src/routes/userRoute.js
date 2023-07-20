@@ -8,11 +8,9 @@ const userController=require('../controllers/userController')
 
 // MULTER MIDDLEWARE
 const upload=require('../middleware/users/multerUser')
-// MULTER MIDDLEWARE
 
 // Middleware para encriptar la contraseña
 const bcrypt =require('../middleware/users/encPassUser')
-// Middleware para encriptar la contraseña
 
 // Middleware para validar los campos provenientes del form
 const validationUserRegister =require('../middleware/users/validationUserRegister')

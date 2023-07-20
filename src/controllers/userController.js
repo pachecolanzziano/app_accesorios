@@ -97,9 +97,9 @@ const user = {
                 //Verificamos si seleccionó la opción recuerdame
                 if (req.body.recuerdame) {
                     res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
-                    res.redirect('/user/profile');
+                    res.redirect('/');
                 } else {
-                    res.redirect('/user/profile');
+                    res.redirect('/');
                 }
             } else {
                 return res.render('./userViews/login', {
