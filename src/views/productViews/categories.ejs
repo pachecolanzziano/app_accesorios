@@ -3,151 +3,64 @@
 
 <head>
 
+  <!-- metas and lynks -->
+  <%- include('../partials/metasBasics') %>
     <!-- metas and lynks -->
-    <%- include('../partials/metasBasics') %>
-        <!-- metas and lynks -->
 
-        <link rel="stylesheet" href="/css/product/categories.css">
-        
+    <link rel="stylesheet" href="/css/product/categories.css">
+
     <link rel="stylesheet" href="/css/product/componentCard.css">
-        <title>Inicio</title>
+    <title>Inicio</title>
 </head>
 
 <body>
 
+  <!-- header -->
+  <%- include('../partials/header') %>
     <!-- header -->
-    <%- include('../partials/header') %>
-        <!-- header -->
 
-        <main>
+    <main>
 
-            <form class="formSearch" action="/product/categories" method="POST">
-                <input name="search" type="text" class="bar2" placeholder="Buscar">
-                <button class="btnSearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
+      <form class="formSearch" action="/product/categories" method="POST">
+        <input name="search" type="text" class="bar2" placeholder="Buscar">
+        <button class="btnSearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
 
-            <form class="form-filters" action="/" method="post">
+      <form class="form-filters" action="/product/filtrar" method="post">
 
-                <div class="title-form">Filtrar y/o ordenar</div>
+        <div class="title-form">Filtrar y/o ordenar</div>
+        <div class="filter">
+          <snap class="title">Ordenar Por Precio</snap>
+          <div class="item">
+            <label for="mayor">Mayor a menor</label>
+            <input type="radio" id="mayor" name="filtro" value="mayor">
+          </div>
+          <div class="item">
+            <label for="menor">Menor a mayor</label>
+            <input type="radio" id="menor" name="filtro" value="menor">
+          </div>
+        </div>
+        <input class="btn-filtrar" type="submit" value="Filtrar">
+      </form>
 
-                <!-- <div class="filter">
-
-                    <snap class="title">Marca</snap>
-                    <div class="item">
-                        <label for="apple">Apple</label>
-                        <input type="checkbox" id="apple" name="mark" value="apple">
-                    </div>
-                    <div class="item">
-                        <label for="Samsung">Samsung</label>
-                        <input type="checkbox" id="Samsung" name="mark" value="Samsung">
-                    </div>
-                    <div class="item">
-                        <label for="Xiaomi">Xiaomi</label>
-                        <input type="checkbox" id="Xiaomi" name="mark" value="Xiaomi">
-                    </div>
-                    <div class="item">
-                        <label for="Motorola">Motorola</label>
-                        <input type="checkbox" id="Motorola" name="mark" value="Motorola">
-                    </div>
-                    <div class="item">
-                        <label for="Sony">Sony</label>
-                        <input type="checkbox" id="Sony" name="mark" value="Sony">
-                    </div>
-                    <div class="item">
-                        <label for="Otra">Otra</label>
-                        <input type="checkbox" id="Otra" name="mark" value="Otra">
-                    </div>
-
-                </div> -->
+      <section class="content-cels">
+        <div class="title-cels">
+          PRODUCTOS
+        </div>
 
 
-                <div class="filter">
-                    <snap class="title">Ordenar Por Precio</snap>
-                    <div class="item">
-                        <label for="mayor">Mayor a menor</label>
-                        <input type="radio" id="mayor" name="price" value="mayor">
-                    </div>
-                    <div class="item">
-                        <label for="menor">Menor a mayor</label>
-                        <input type="radio" id="menor" name="price" value="menor">
-                    </div>
-                </div>
-
-
-                <!-- <div class="filter">
-                    <snap class="title">Color:</snap>
-                    <div class="item">
-                        <label for="red">Rojo</label>
-                        <input type="checkbox" id="red" name="color" value="red">
-                    </div>
-                    <div class="item">
-                        <label for="blue">Azul</label>
-                        <input type="checkbox" id="blue" name="color" value="blue">
-                    </div>
-                    <div class="item">
-                        <label for="white">Blanco</label>
-                        <input type="checkbox" id="white" name="color" value="white">
-                    </div>
-                    <div class="item">
-                        <label for="black">Negro</label>
-                        <input type="checkbox" id="black" name="color" value="black">
-                    </div>
-                </div> -->
-
-
-                <!-- <div class="filter">
-                    <snap class="title">Memoria</snap>
-                    <div class="item">
-                        <label for="8GB">8GB</label>
-                        <input type="checkbox" id="8GB" name="memory" value="8GB">
-                    </div>
-                    <div class="item">
-                        <label for="16GB">16GB</label>
-                        <input type="checkbox" id="16GB" name="memory" value="16GB">
-                    </div>
-                    <div class="item">
-                        <label for="32GB">32GB</label>
-                        <input type="checkbox" id="32GB" name="memory" value="32GB">
-                    </div>
-                    <div class="item">
-                        <label for="64GB">64GB</label>
-                        <input type="checkbox" id="64GB" name="memory" value="64GB">
-                    </div>
-                    <div class="item">
-                        <label for="128GB">128GB</label>
-                        <input type="checkbox" id="128GB" name="memory" value="128GB">
-                    </div>
-                    <div class="item">
-                        <label for="256GB">256GB</label>
-                        <input type="checkbox" id="256GB" name="memory" value="256GB">
-                    </div>
-
-                </div> -->
-
-                <input class="btn-filtrar" type="submit" value="Filtrar">
-            </form>
-
-
-
-
-            <section class="content-cels">
-                <div class="title-cels">
-                    PRODUCTOS
-                </div>
-                
-                
-            <% if (locals.products) { %>
+        <% if (locals.products) { %>
                 <%- include('../partials/componentCard',{products})  %> 
-            <% } %>
+        <% } %>
 
-            </section>
+        </section>
 
-        </main>
+    </main>
 
-        <!-- footer -->
-        <%- include('../partials/footer') %>
-            <!-- footer -->
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+      <!-- footer -->
+
 
 </body>
-
 </html>

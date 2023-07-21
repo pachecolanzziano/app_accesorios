@@ -25,6 +25,7 @@ router.post('/register',uploadProduct.single('imgCel'),ValidationRegister,produc
 router.put('/:id',uploadProduct.single('imgCel'),productController.updateProduct)//update product
 router.delete('/:id',productController.deleteProduct)      //delete product
 router.post('/categories',productController.categorySearch)      //view Categories
+router.post('/filtrar',productController.categoryFiltrar)      //filtro Categories
 
 // EndPoints API
 router.get('/api/list',productController.apiProductList)

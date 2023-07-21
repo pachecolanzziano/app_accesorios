@@ -34,8 +34,10 @@
                 </div>
 				<label for="nick">Nick</label>
                 <input type="text" name="nick" id="nick" placeholder="Ingresa tu usuario" disabled value="<%= locals.user.nick %>"> 
+
                 <label for="email">Email</label>
 				<input type="email" name="email" id="email" placeholder="Ingresa tu correo" disabled value="<%= locals.user.email %>" >
+
                 <label for="firstName">Nombres</label>
 				<input type="text" name="firstName" id="firstName" placeholder=""    value="<%= (locals.user.firstName)?locals.user.firstName:'' %>" > 
 
@@ -44,10 +46,12 @@
 
 				<label for="address">Dirección</label>
 				<input type="text" name="address" id="address" placeholder=""    value="<%= (locals.user.address)?locals.user.address:'' %>" > 
+
                 <label for="type">Tipo de usuario</label>
 				<input type="text" name="" id="type" placeholder="" disabled value="<%= (locals.user.type)?locals.user.type.name:'' %>" > 
 
                 <snap class="file">Cambiar imagen de perfil:<input class="input-file" name="img-perfil" id="img-update" type="file"></snap>
+
                 <button type="submit">Actualizar</button>
             </form>
         </div>

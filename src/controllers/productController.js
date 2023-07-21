@@ -128,7 +128,7 @@ const product = {
 	categoriesView: async (req, res) => {
 		//Obtenemos los productos
 		let products = await productModel.getProducts()
-		res.render('./productViews/categories', { products })
+		res.render('./productViews/categories', { products, 'namePage': 'categoria' })
 	},
 	shopingCartView: async (req, res) => {
 		//verificamos que el usuario haya iniciado sesion
@@ -144,68 +144,91 @@ const product = {
 		let products = await productModel.getProductsByName(search)
 		res.render('./productViews/categories', { products })
 	},
-	apiProductList: async (req, res) => {
-        let ProductList= await productModelApi.getAllProducts()
-              let ListDetails =[]
-        
-        ProductList.forEach(element => {
-            let product = {
-                id: element.id,
-                name: element.name,
-				brand: element.brand? element.brand.name : '',   
-				price: element.price,   
-				
-                detail: 'http://localhost:3001/product/api/'+element.id
-            }
-            ListDetails.push(product)
-        });
-   //   console.log(ProductList[1].brand.name);
-        return res.status(200).json({
-            meta: {
-                status: 200,
-                total: ProductList.length,
-                url: 'http://localhost:3001/product/api/list',
-                method: 'GET'
-            },
-            data: ListDetails
-        })
-    },
-    apiProductDetail: async (req, res) => {
+	categoryFiltrar: async (req, res) => {
+		let products = await productModel.getProducts()
+		let filtro = req.body.filtro
+		let mayor = 0		
+		let lista = []
+		products.forEach((product)=>{
+			let id = product.dataValues.id
+			let name = product.dataValues.name
+			let price = product.dataValues.price
+			let image = product.dataValues.image
+			lista.push({id, name, price, image})
+		})
 
-        let product = await productModelApi.getProductById(req.params.id)
-        res.status(200).json({
-            meta: {
-                status: 200,
-                total: 1,
-                url: 'http://localhost:3001/product/api/:'+req.params.id,
-                method: 'GET'
-            },
-            data: product
-        })
-    },
+		console.log(filtro);
+		console.log(lista);
+		if (filtro.toLowerCase() == 'mayor') {
+			lista.sort((a, b) => b.price - a.price);
+			res.render('./productViews/categories', { products :  lista})
+		}else{
+			lista.sort((a, b) => a.price - b.price);
+			res.render('./productViews/categories', { products :  lista})
+		}
+	},
+	apiProductList: async (req, res) => {
+		let ProductList = await productModelApi.getAllProducts()
+		let ListDetails = []
+
+		ProductList.forEach(element => {
+			let product = {
+				id: element.id,
+				name: element.name,
+				brand: element.brand ? element.brand.name : '',
+				price: element.price,
+
+				detail: 'http://localhost:3001/product/api/' + element.id
+			}
+			ListDetails.push(product)
+		});
+		//   console.log(ProductList[1].brand.name);
+		return res.status(200).json({
+			meta: {
+				status: 200,
+				total: ProductList.length,
+				url: 'http://localhost:3001/product/api/list',
+				method: 'GET'
+			},
+			data: ListDetails
+		})
+	},
+	apiProductDetail: async (req, res) => {
+
+		let product = await productModelApi.getProductById(req.params.id)
+		res.status(200).json({
+			meta: {
+				status: 200,
+				total: 1,
+				url: 'http://localhost:3001/product/api/:' + req.params.id,
+				method: 'GET'
+			},
+			data: product
+		})
+	},
 	lastProduct: async (req, res) => {
 		let product = await productModel.getLastProduct()
 		res.status(200).json({
-            meta: {
-                status: 200,
-                total: 1,
-                url: 'http://localhost:3001/product/api/lastProduct',
-                method: 'GET'
-            },
-            data: product
-        })
+			meta: {
+				status: 200,
+				total: 1,
+				url: 'http://localhost:3001/product/api/lastProduct',
+				method: 'GET'
+			},
+			data: product
+		})
 	},
 	apiProductMostViewed: async (req, res) => {
 		let products = await productModel.getProductByCategory('MostViewed')
 		res.status(200).json({
-            meta: {
-                status: 200,
-                total: products.length,
-                url: 'http://localhost:3001/product/api/mostViewed',
-                method: 'GET'
-            },
-            data: products
-        })
+			meta: {
+				status: 200,
+				total: products.length,
+				url: 'http://localhost:3001/product/api/mostViewed',
+				method: 'GET'
+			},
+			data: products
+		})
 	}
 }
 

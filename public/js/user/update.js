@@ -6,12 +6,11 @@ window.addEventListener('load', function () {
     form.addEventListener('submit',async function (e) {
         
         let img = document.getElementById('img-update').value
-
+console.log(img);
         
         let errors = []
         
         if(img != ''){
-            e.preventDefault()
             let arrImg=img.split('.')
             let extension=arrImg[arrImg.length-1]
             let validExtension=['jpg','png','jpeg','gif']
