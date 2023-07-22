@@ -1,27 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Carrito de Compra</title>
+
+  <!-- metas and lynks -->
+  <%- include('../partials/metasBasics') %>
+    <!-- metas and lynks -->
+
+    <link rel="stylesheet" href="/css/product/styleShopCart.css">
+
+    <link rel="stylesheet" href="/css/product/componentCard.css">
+    <title>Lista ed compra</title>
 </head>
+
 <body>
-  <h1>Carrito de Compra</h1>
+  <%- include('../partials/header') %>
+  <div class="shoppingCard">
 
-  <% if (carrito.length > 0) { %>
-    <ul>
-      <% carrito.forEach((producto) => { %>
-        <li><%= producto.name %> - $<%= producto.price.toFixed(2) %></li>
-      <% }) %>
-    </ul>
+    <div class="content-products">
+      <div class="title-shopping-card">MIS PRODUCTOS</div>
+      <% let total = 0; %>
+      <% if (carrito.length> 0) { %>
+        <% carrito.forEach((producto)=> { %>
+          <div class="card-product">
+            <img class="img-card" src="/img/products/<%= producto.image %>" alt="">
+            <span class="name-product"><%= producto.name %></span>
+            <span class="price-product">$<%= producto.price.toFixed(2) %></span>
+            <!-- <button class="btn-eliminar">Eliminar</button> -->
+          </div>
+          <% total += producto.price; %>
+        <%  %>
+        <% }) %>
+      <% } else { %>
+        <p>El carrito está vacío.</p>
+      <% } %>
 
-    <form action="/vaciar" method="post">
-      <button type="submit">Vaciar carrito</button>
-    </form>
-  <% } else { %>
-    <p>El carrito está vacío.</p>
-  <% } %>
+    </div>
 
-  <hr>
+    <div class="content-info">
+      <div class="card-info">
+        <div class="item-card">
+          <span class="total-texto">Total:</span>
+          <span class="total-precio"><%= total %></span>
+        </div>
+        <button class="comprar">Realizar Compra</button>
 
-  
+      </div>
+    </div>
+
+  </div>
+
+    <hr>
+        <!--carrusel-->
+    <div class="text-title">También te podría interesar </div>
+    <% if (locals.products) { %>
+    <%- include('../partials/componentCard',{products}) %>
+    <% } %>
+
+
+      <!-- footer -->
+      <%- include('../partials/footer') %>
+        <!-- footer -->
 </body>
+
 </html>

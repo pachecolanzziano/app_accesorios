@@ -234,7 +234,8 @@ const product = {
 			let product = await productModelApi.getProductById(req.params.id)
 			let name = product.name
 			let price = product.price
-			req.session.carrito.push({ name,price });
+			let image = product.image
+			req.session.carrito.push({ name,price,image });
 			console.log(req.session.carrito);// verificamos el contenido del carrito ✅
 			// res.render('./productViews/carrito', { carrito: req.session.carrito });
 			res.redirect('/');
@@ -255,9 +256,10 @@ const product = {
 		// Obtener el carrito de la sesión 
 		if (req.session.userLogged) {
 			// req.session.carrito = [];
-			res.render('./productViews/carrito', { carrito: req.session.carrito });
+			let products = await productModel.getProductByCategory('MostViewed');
+			res.render('./productViews/carrito', { carrito: req.session.carrito, products });
 		}else{
-			res.redirect('/user/login', { carrito: req.session.carrito })
+			res.redirect('/user/login')
 		}
 	}
 }
