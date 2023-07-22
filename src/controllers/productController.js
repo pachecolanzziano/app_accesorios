@@ -147,24 +147,22 @@ const product = {
 	categoryFiltrar: async (req, res) => {
 		let products = await productModel.getProducts()
 		let filtro = req.body.filtro
-		let mayor = 0		
+		let mayor = 0
 		let lista = []
-		products.forEach((product)=>{
+		products.forEach((product) => {
 			let id = product.dataValues.id
 			let name = product.dataValues.name
 			let price = product.dataValues.price
 			let image = product.dataValues.image
-			lista.push({id, name, price, image})
+			lista.push({ id, name, price, image })
 		})
 
-		console.log(filtro);
-		console.log(lista);
 		if (filtro.toLowerCase() == 'mayor') {
 			lista.sort((a, b) => b.price - a.price);
-			res.render('./productViews/categories', { products :  lista})
-		}else{
+			res.render('./productViews/categories', { products: lista })
+		} else {
 			lista.sort((a, b) => a.price - b.price);
-			res.render('./productViews/categories', { products :  lista})
+			res.render('./productViews/categories', { products: lista })
 		}
 	},
 	apiProductList: async (req, res) => {
@@ -229,6 +227,38 @@ const product = {
 			},
 			data: products
 		})
+	},
+	agregarCarrito: async (req, res) => {
+		// preguntar por la sección 
+		if (req.session.userLogged) {
+			let product = await productModelApi.getProductById(req.params.id)
+			let name = product.name
+			let price = product.price
+			req.session.carrito.push({ name,price });
+			console.log(req.session.carrito);// verificamos el contenido del carrito ✅
+			// res.render('./productViews/carrito', { carrito: req.session.carrito });
+			res.redirect('/');
+		}else{
+			// res.redirect('./user/login', { carrito: req.session.carrito })
+			res.redirect('/user/login');
+		}
+		// Obtener el id del producto agregar al carro
+	},
+	vaciarCarrito: async (req, res) => {
+		// Vaciar el carrito en la sesión
+		req.session.carrito = [];
+
+		// Redirigir a la página inicial
+		res.redirect('/');
+	},
+	carrito: async (req, res) => {
+		// Obtener el carrito de la sesión 
+		if (req.session.userLogged) {
+			// req.session.carrito = [];
+			res.render('./productViews/carrito', { carrito: req.session.carrito });
+		}else{
+			res.redirect('/user/login', { carrito: req.session.carrito })
+		}
 	}
 }
 

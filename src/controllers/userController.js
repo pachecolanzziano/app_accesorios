@@ -3,6 +3,7 @@ const path = require('path')
 
 const userModel = require('../models/userModel')
 const userModelApi = require('../models/userModelApi')
+const { carrito } = require('./productController')
 const user = {
     login: (req, res) => {
         res.render('./userViews/login')
@@ -93,6 +94,8 @@ const user = {
                 // para mantener la información en sesión
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+                req.session.carrito = [];
+
 
                 //Verificamos si seleccionó la opción recuerdame
                 if (req.body.recuerdame) {

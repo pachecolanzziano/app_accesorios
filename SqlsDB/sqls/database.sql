@@ -146,6 +146,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1, 'luis carlos', 'pacheco lanzziano', 'userTest', 'pachecolanzziano@gmail.com', '$2a$10$KHfXI/jkDwvH6rTvZSSz6ex6cNh5IVVQmk.mIM.T2XE4f3css/gSu', 'calle falsa # 1-23', 'default.png', 1, '2023-07-13', '2023-07-13', NULL);
+INSERT INTO `users` VALUES (1, 'Juan fernanado', 'España', 'Administrador', 'juanF@gmail.com', '$2a$10$KHfXI/jkDwvH6rTvZSSz6ex6cNh5IVVQmk.mIM.T2XE4f3css/gSu', 'calle falsa # 1-23', 'default.png', 1, '2023-07-13', '2023-07-13', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+-- Pa$$w0rd!

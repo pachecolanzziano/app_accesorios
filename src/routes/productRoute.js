@@ -15,7 +15,7 @@ const ValidationRegister=require('../middleware/products/ValidationRegister')
 
 //Rutas para vistas(ejs)
 router.get('/register',productController.registerView)              //view register
-router.get('/update/:id',productController.updateView)              //view update
+router.get('/update/:id',productController.updateView)             //view update
 router.get('/categories',productController.categoriesView)      //view Categories
 router.get('/detail/:id',productController.detailView)              //view DetailProduct
 router.get('/shopingCart', productController.shopingCartView)   //view ShoppingCart
@@ -33,7 +33,8 @@ router.get('/api/lastProduct',productController.lastProduct)
 router.get('/api/mostViewed',productController.apiProductMostViewed)
 router.get('/api/:id',productController.apiProductDetail)
 
-
-
+router.get('/carrito', productController.carrito);
+router.get('/agregar/:id', productController.agregarCarrito);
+router.post('/vaciar', productController.vaciarCarrito);
 //IMPORTANTE: exportar el módulo para poder ser usado en app.js
 module.exports=router

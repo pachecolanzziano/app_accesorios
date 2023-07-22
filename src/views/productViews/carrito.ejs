@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carrito de Compra</title>
+</head>
+<body>
+  <h1>Carrito de Compra</h1>
+
+  <% if (carrito.length > 0) { %>
+    <ul>
+      <% carrito.forEach((producto) => { %>
+        <li><%= producto.name %> - $<%= producto.price.toFixed(2) %></li>
+      <% }) %>
+    </ul>
+
+    <form action="/vaciar" method="post">
+      <button type="submit">Vaciar carrito</button>
+    </form>
+  <% } else { %>
+    <p>El carrito está vacío.</p>
+  <% } %>
+
+  <hr>
+
+  
+</body>
+</html>

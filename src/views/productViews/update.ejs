@@ -26,9 +26,7 @@
         <form class="form-product-update" action="/product/<%= product.id %>?_method=PUT" method="POST"
           enctype="multipart/form-data">
 
-          <div class="errorsList">
-                
-          </div>
+          <div class="errorsList"></div>
 
           <input type="text" name="name" id="name" placeholder="Nombre del producto" value="<%= product.name %>">
           
@@ -43,51 +41,6 @@
             <% } %>
           </select>
 
-          <!-- <select class="select" name="color" id="color">
-            <option value="">Color:</option>
-
-            <% if (locals.colors) { %>
-
-              <% colors.forEach(element=> { %>
-                <option <% if (product.color_id == element.id ) { %>selected<% } %> value="<%= element.id %> "><%= element.name %> </option>
-              <% }) %>
-
-            <% } %>
-            
-          </select> -->
-          <!-- <input type="text" placeholder="Marca"> -->
-          <!-- <select class="select" name="mark" id="mark">
-            <option value="">Marca:</option>
-            <% if (locals.brands) { %>
-
-              <% brands.forEach(element=> { %>
-                <option <% if (product.brand_id == element.id ) { %>selected<% } %> value="<%= element.id %> "><%= element.name %> </option>
-              <% }) %>
-
-            <% } %>
-          </select> -->
-          <!-- <input type="text" placeholder="Memoria"> -->
-          <!-- <select class="select" name="memory" id="memory">
-            <option value="">Memoria:</option>
-            <% if (locals.memories) { %>
-
-              <% memories.forEach(element=> { %>
-                <option <% if (product.memory_id == element.id ) { %>selected<% } %> value="<%= element.id %> "><%= element.name %> </option>
-              <% }) %>
-
-            <% } %>
-          </select> -->
-
-          <!-- <select class="select" name="ram" id="ram">
-            <option value="">Ram:</option>
-            <% if (locals.rams) { %>
-
-              <% rams.forEach(element=> { %>
-                <option <% if (product.ram_id == element.id ) { %>selected<% } %> value="<%= element.id %> "><%= element.name %> </option>
-              <% }) %>
-
-            <% } %>
-          </select> -->
           <input type="text" name="price" placeholder="Precio" value="<%= product.price %>">
 
           <snap class="file">Imagen del producto:<input type="file" class="input-file" name="imgCel" id="imgCel"

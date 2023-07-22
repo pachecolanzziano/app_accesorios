@@ -4,8 +4,6 @@ productModel = {
 	getAllProducts: async  ()=> {
 		let list= await db.Product.findAll({
 			attributes: ['id', 'name', 'price'],
-			include: ['brand']
-				
 		})
 		return list
 	},
@@ -15,7 +13,6 @@ productModel = {
 			where: {
 				id: id
 			},
-			include: ['brand', 'color', 'memory', 'ram']
 		})
 		return product
 	}

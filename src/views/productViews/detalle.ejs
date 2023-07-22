@@ -34,18 +34,14 @@
           </form>
 
           <% } else { %>
-            <a class="btn-comprar">COMPRAR</a>
-            <a class="btn-agregar">AGREGAR AL CARRITO</a>
+            <!-- <a class="btn-comprar">COMPRAR</a> -->
+            <form action="/product/agregar/<%= product.id %>" method="GET">
+            <button class="btn-agregar" type="submit">AGREGAR AL CARRITO</button>
+            </form>
             <% } %>
 
       </div>
-      <!-- <div class="caracts">
-        <div class="title-caract">Características del producto</div>
-        <div class="caracteristicas"><span class="dot"></span> Color:    <div class="valor"><%= product.color?product.color.name:'' %></div></div>
-        <div class="caracteristicas"><span class="dot"></span> Marca:    <div class="valor"><%= product.brand?product.brand.name:'' %></div></div>
-        <div class="caracteristicas"><span class="dot"></span> Almacenamiento:     <div class="valor"><%= product.memory?product.memory.name:'' %></div></div>
-        <div class="caracteristicas"><span class="dot"></span> Memoria Ram:    <div class="valor"><%= product.ram?product.ram.name:'' %></div></div>
-      </div> -->
+      
 
 
       <section class="interes">
