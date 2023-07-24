@@ -237,10 +237,8 @@ const product = {
 			let image = product.image
 			req.session.carrito.push({ name,price,image });
 			console.log(req.session.carrito);// verificamos el contenido del carrito ✅
-			// res.render('./productViews/carrito', { carrito: req.session.carrito });
 			res.redirect('/');
 		}else{
-			// res.redirect('./user/login', { carrito: req.session.carrito })
 			res.redirect('/user/login');
 		}
 		// Obtener el id del producto agregar al carro

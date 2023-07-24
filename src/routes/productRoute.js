@@ -18,7 +18,6 @@ router.get('/register',productController.registerView)              //view regis
 router.get('/update/:id',productController.updateView)             //view update
 router.get('/categories',productController.categoriesView)      //view Categories
 router.get('/detail/:id',productController.detailView)              //view DetailProduct
-router.get('/shopingCart', productController.shopingCartView)   //view ShoppingCart
 
 //Rutas por métodos != get
 router.post('/register',uploadProduct.single('imgCel'),ValidationRegister,productController.registerProduct)    // add product

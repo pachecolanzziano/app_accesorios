@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <!-- metas and lynks -->
-    <%- include('./partials/metasBasics') %>
-    <!-- metas and lynks -->
-    <link rel="stylesheet" href="/css/product/componentCard.css">
-    <title>Inicio</title>
+    
+    <head>
+        <!-- metas and lynks -->
+        <%- include('./partials/metasBasics') %>
+        <!-- metas and lynks -->
+        <link rel="stylesheet" href="/css/product/carrusel.css">
+        <link rel="stylesheet" href="/css/product/componentCard.css">
+        <title>Inicio</title>
+        
 </head>
 
 <body>
@@ -14,9 +16,7 @@
     <!-- header -->
     <%- include('./partials/header') %>
     <!-- header -->
-
     <main>
-
         <div class="slider">
             <% if (productPro) { %>
                 <div class="up">
@@ -25,7 +25,7 @@
                 <div class="down">
                     <div class="nombre">
                         <label><%= productPro.name %></label>
-                        <label class="precio"><%= "- $" + productPro.price %></label>
+                        <label class="precio"><%= "$" + productPro.price %></label>
                     </div>
                     <div>
                       
@@ -35,6 +35,7 @@
             <% } %>
             
         </div>
+        
         <section class="checks">
             <div> <input type="radio" name="radio" id=""> </div>
             <div> <input type="radio" name="radio" id=""> </div>
@@ -58,4 +59,5 @@
     <!-- footer -->
 
 </body>
+    <script src="js/product/carrusel.js"></script>
 </html>
