@@ -1,32 +1,5 @@
 CREATE DATABASE  IF NOT EXISTS `bd_project_sprints` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `bd_project_sprints`;
---
--- Table structure for table `carts`
---
-
-DROP TABLE IF EXISTS `carts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carts` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `status` tinyint(1) DEFAULT NULL,
-  `createdAt` date DEFAULT NULL,
-  `upatedAt` date DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_Cart_users1_idx` (`user_id`),
-  CONSTRAINT `fk_Cart_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `carts`
---
-
-LOCK TABLES `carts` WRITE;
-/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `categories`
@@ -82,7 +55,11 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Pulsera tejida',15000,NULL,'pulseraTejida.jpg',NULL,NULL,NULL),(2,'Correa',26000,NULL,'correa.jpg',NULL,NULL,NULL),(3,'Sombrero',50000,NULL,'sombrero.jpg',NULL,NULL,NULL),(4,'Camisa',38000,NULL,'Camisa.jpg',NULL,NULL,NULL);
+INSERT INTO `products` (`id`, `name`, `price`, `category_id`, `image`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+(1, 'Pulsera tejida', 15000, 2, '1690381095309.png', NULL, '2023-07-26', NULL),
+(2, 'Correa', 26000, 3, 'correa.png', NULL, NULL, NULL),
+(3, 'Sombrero', 50000, 2, 'sombrero.png', NULL, NULL, NULL),
+(4, 'Camisa', 38000, 1, 'camisa.png', NULL, NULL, NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
