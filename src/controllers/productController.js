@@ -5,9 +5,9 @@ const productModelApi = require('../models/productModelApi')
 const product = {
 
 	registerView: (req, res) => {
-		//verificamos si el usuario está almacenado en session
+		//se verifica si el usuario está almacenado en session
 		if (req.session.userLogged) {
-			//verificamos que sea empleado o administrador
+			//se verifica que sea empleado o administrador
 			if (req.session.userLogged.type.name == 'Employee' || req.session.userLogged.type.name == 'Admin') {
 				res.render('./productViews/register')
 			} else {
@@ -19,7 +19,7 @@ const product = {
 	},
 	registerProduct: async (req, res) => {
 
-		//Requerimos la función para capturar los errores almacenados en req
+		//función para capturar los errores almacenados en req
 		const { validationResult } = require('express-validator')
 		let errors = validationResult(req)
 		let errorsList = errors.errors
@@ -31,7 +31,7 @@ const product = {
 		if (req.file) {
 			nameImg = req.file.filename
 		}
-		// //error de multer con la imagen
+
 		if (req.fileValidationError) {
 			errorsList.push({
 				value: '',
@@ -40,12 +40,11 @@ const product = {
 				location: 'body'
 			})
 		}
-		//Verificamos que no hayan errores
+		//se verifica que no hayan errores
 		if (errors.isEmpty()) {
 
-			//creamos el producto para agregarloa  la lista 
+			//se crea el producto para agregarlo a la lista 
 			let newProduct = {
-				// "id": products.length + 1,
 				"name": req.body.name,
 				"price": req.body.price,
 				"category_id": req.body.category,
@@ -55,27 +54,27 @@ const product = {
 			//guardamos el nuevo producto 
 			productModel.saveProduct(newProduct)
 
-			//redirigimos a home si todo sale ok
+			//se redirige a home si todo sale ok
 			res.redirect('/')
 		}
 		else {
-			//Evmiamos los errores para ser listados en el mismo formulario de registro
+			//Envía los errores para ser listados en el mismo formulario de registro
 			res.render('productViews/register', { errorsList, product })
 		}
 
 	},
 	updateView: async (req, res) => {
-		//verificamos si el usuario está almacenado en session
+		//se verifica si el usuario está almacenado en session
 		if (req.session.userLogged) {
-			//verificamos que sea empleado o administrador
+			//se verifica que sea empleado o administrador
 			if (req.session.userLogged.type.name == 'Employee' || req.session.userLogged.type.name == 'Admin') {
-				//Obtenemos el producto por id
+				//Obtiene el producto por id
 				let product = await productModel.getProductById(req.params.id)
 
-				//Obtenemos los datos para cargar dinámicamente los selects del html
+				//obtener los datos para cargar dinámicamente los selects del html
 				let categories = await fetch('http://localhost:3001/api/categories').then(list => list.json())
 
-				// verificamos que haya un resultado
+				// se verifica que haya un resultado
 				if (product) {
 					res.render('./productViews/update', { product, categories })
 				}
@@ -94,7 +93,7 @@ const product = {
 
 	},
 	updateProduct: (req, res) => {
-		//Declaramos el producto que se actualizará
+		//se declara el producto que se actualizará
 		let product = {
 			"id": req.params.id,
 			"name": req.body.name,
@@ -102,36 +101,36 @@ const product = {
 			"category_id": req.body.category,
 		}
 
-		//Obtenemos el nombre de la imagen "nueva" si se actualizó
+		//se obtiene el nombre de la imagen "nueva" si se actualizó
 		if (req.file) {
 			product.image = req.file.filename
 		}
 
-		//Guardamos el producto en DB
+		//se guarda el producto en DB
 		productModel.updateProduct(product)
 
 		res.redirect('/')
 	},
 	detailView: async (req, res) => {
-		//Obtenemos el producto por id
+		//se obtiene el producto por id
 		let product = await productModel.getProductById(req.params.id)
-		//Obtenemos los productos correspondientes a la categoria
+		//se obtiene los productos correspondientes a la categoría
 		let products = await productModel.getProductByCategory('MostViewed')
 		res.render('./productViews/detalle', { product, products })
 	},
 	deleteProduct: async (req, res) => {
-		//Eliminamos el producto
+		//se elimina el producto
 		await productModel.deleteProduct(req.params.id)
 
 		res.redirect('/')
 	},
 	categoriesView: async (req, res) => {
-		//Obtenemos los productos
+		//se obtiene los productos
 		let products = await productModel.getProducts()
 		res.render('./productViews/categories', { products, 'namePage': 'categoria' })
 	},
 	shopingCartView: async (req, res) => {
-		//verificamos que el usuario haya iniciado sesion
+		//se verifica que el usuario haya iniciado sesion
 		if (req.session.userLogged) {
 			let products = await productModel.getProductByCategory('MostViewed')
 			res.render('./productViews/shopCart', { products })
@@ -236,7 +235,7 @@ const product = {
 			let price = product.price
 			let image = product.image
 			req.session.carrito.push({ name,price,image });
-			console.log(req.session.carrito);// verificamos el contenido del carrito ✅
+			console.log(req.session.carrito);// verificar el contenido del carrito ✅
 			res.redirect('/');
 		}else{
 			res.redirect('/user/login');

@@ -2,12 +2,12 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     encPass: (req,res,next)=> {//middleware encargado de encriptar la contraseña
-        //Obtenemos la contra y la confirmación
+        //obtener la contra y la confirmación
         let pass =req.body.pass
         let pass2=req.body.passConfirm
-        //Comparamos que sean iguales
+        //comparar que sean iguales
         if(pass==pass2){
-            //Reutilizamos las dos variables, pass para la contraseña encriptada, 
+            //reutilizar las dos variables, pass para la contraseña encriptada, 
             req.body.pass = bcrypt.hashSync(pass, 10)
             //passConfirm para el estado(True correcto)
             req.body.passConfirm=true

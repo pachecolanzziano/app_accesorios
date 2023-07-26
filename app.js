@@ -33,9 +33,6 @@ app.use(cookies());
 const userLogged=require('./src/middleware/users/userLogged')
 app.use(userLogged)
 
-
-
-
 //OVERRIDE
 const methodOverride =  require('method-override');
 app.use(methodOverride('_method'));

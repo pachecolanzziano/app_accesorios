@@ -1,5 +1,3 @@
-Producto/Servicio: App para una tienda de accesorios, fase beta.
+Producto/Servicio: App para una tienda de accesorios
 
-Público objetivo: cualquier persona mayor de edad que desee adquirir un Producto, con la ventaja de comprarlo a un menor precio y con la garantía de una compra segura y confiable frente a las características del producto.
-
-
+La aplicación de tienda de accesorios es una plataforma completa que permite el registro de productos, usuarios y roles específicos como administradores, empleados y clientes. Los usuarios pueden registrarse y acceder a sus cuentas según sus roles. Los administradores y empleados tienen privilegios para administrar y actualizar los productos, mientras que los clientes pueden navegar por la tienda, agregar artículos al carrito y realizar compras. La aplicación ofrece una experiencia de usuario intuitiva y segura, brindando una variedad de accesorios para que los clientes puedan encontrar lo que necesitan. Además, cuenta con un sistema de registro y autenticación sólido para garantizar la seguridad de la información personal.

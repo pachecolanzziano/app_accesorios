@@ -35,5 +35,5 @@ router.get('/api/:id',productController.apiProductDetail)
 router.get('/carrito', productController.carrito);
 router.get('/agregar/:id', productController.agregarCarrito);
 router.post('/vaciar', productController.vaciarCarrito);
-//IMPORTANTE: exportar el módulo para poder ser usado en app.js
+
 module.exports=router

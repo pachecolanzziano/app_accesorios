@@ -14,5 +14,4 @@ router.get('/api/types',mainController.types)
 
 
 
-//IMPORTANTE: exportar el módulo para poder ser usado en app.js
 module.exports=router

@@ -82,14 +82,6 @@
 }
 
 @media (min-width:1200px) {
-    /* .formRegisterUser {
-        width: 50%;
-    } */
-
-    /* .check {
-        align-self: baseline;
-        padding-left: 35px;
-    } */
 
     .form-product-update{
         flex-direction: row;

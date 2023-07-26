@@ -12,7 +12,7 @@ const user = {
         res.render('./userViews/registerUser')
     },
     register: async (req, res) => {
-        //Requerimos la función para capturar los errores almacenados en req
+        // función para capturar los errores almacenados en req
         const { validationResult } = require('express-validator')
         let errors = validationResult(req)
         let errorsList = errors.errors
@@ -29,7 +29,6 @@ const user = {
         }
 
 
-        // //error de multer con la imagen
         if (req.fileValidationError) {
             errorsList.push({
                 value: '',
@@ -39,19 +38,19 @@ const user = {
             })
         }
 
-        //Verificamos incialmente la validación de los inputs del form
+        //Verificar inicialmente la validación de los inputs del form
         if (errors.isEmpty()) {
 
-            //Verificamos que el proceso de comparar y encriptar las contras haya salido bien(true)
+            //Verificar que el proceso de comparar y encriptar las contras haya salido bien(true)
             if (req.body.passConfirm) {
 
-                // Verificamos que haya una imagen de perfil y asignamos en una variable para su posterior uso
+                // Verificar que haya una imagen de perfil y asignamos en una variable para su posterior uso
                 let nameImg = 'default.png'
                 if (req.file) {
                     nameImg = req.file.filename
                 }
 
-                //creamos el usuario para ser guardado
+                //crear el usuario para ser guardado
                 let user = {
                     "nick": req.body.nick,
                     "email": req.body.email,
@@ -60,12 +59,12 @@ const user = {
                     "image": nameImg,
                 }
 
-                //Guardamos el usuario
+                //guardar el usuario
                 userModel.create(user)
 
                 res.redirect("/")
             } else {
-                //agregamos un error para cuando las contraseñas no coinciden
+                //agregar un error para cuando las contraseñas no coinciden
                 errorsList.push({
                     value: '',
                     msg: 'Las contraseñas deben coincidir',
@@ -73,23 +72,22 @@ const user = {
                     location: 'body'
                 })
 
-                //enviamos el error a la vista
+                //enviar el error a la vista
                 res.render('userViews/registerUser', { errorsList })
             }
         }
         else {
-            // console.log(errorsList);
             res.render('userViews/registerUser', { errorsList })
         }
     },
     loginProcess: async (req, res) => {
-        //Obtenemos el usuario correspondiente al email
+        //obtener el usuario correspondiente al email
         let userToLogin = await userModel.getUserByEmail(req.body.email);
-        //Verificamos que haya encontrado un usuario
+        //verificar que haya encontrado un usuario
         if (userToLogin) {
-            //comparamos las contrasenas
+            //comparar las contraseñas
             let checkThePassword = bcrypt.compareSync(req.body.pass, userToLogin.password)
-            //Verificamos si todo ok
+            //verificar si todo ok
             if (checkThePassword) {
                 // para mantener la información en sesión
                 delete userToLogin.password;
@@ -97,7 +95,7 @@ const user = {
                 req.session.carrito = [];
 
 
-                //Verificamos si seleccionó la opción recuerdame
+                //verificar si seleccionó la opción recuerdame
                 if (req.body.recuerdame) {
                     res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
                     res.redirect('/');
@@ -126,9 +124,9 @@ const user = {
 
     },
     profile: async (req, res) => {
-        //Obtenemos el usuario por id
+        //obtener el usuario por id
         let userNow = await userModel.getUserById(req.session.userLogged.id)
-        //verificamos que esté logueado
+        //verificar que esté logueado
         if (req.session.userLogged) {
             res.render('userViews/profile', {
                 user: userNow
@@ -144,7 +142,7 @@ const user = {
             lastName: req.body.lastName,
             address: req.body.address,
         }
-        //verificamos si se ha subido imagen para actualizarla
+        //verificar si se ha subido imagen para actualizarla
         if (req.file) {
             user.image = req.file.filename
         }
@@ -160,10 +158,8 @@ const user = {
         return res.redirect('/');
     },
     existEmail: async (req, res) => {
-        // res.send('entró acá')
         let user = await userModel.existEmail(req.body.email)
         if (user) {
-            // return res.send(true)
             return res.status(200).json({
                 meta: {
                     status: 200,
@@ -187,7 +183,6 @@ const user = {
     },
     apiUserList: async (req, res) => {
         let listado= await userModelApi.getAllUsers()
-        // console.log(listado);
         let ListadoDetails =[]
         
         listado.forEach(element => {
@@ -199,7 +194,6 @@ const user = {
             }
             ListadoDetails.push(user)
         });
-        // console.log(ListadoDetails);
         return res.status(200).json({
             meta: {
                 status: 200,

@@ -37,7 +37,6 @@ userModel = {
 		return aux
 	}
 }
-// userModel.getUserByField('email', 'ernestino@correo.com')
 module.exports = userModel;
 
 

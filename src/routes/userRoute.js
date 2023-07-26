@@ -27,7 +27,6 @@ router.get('/profile',authentication, userController.profile)
 router.post('/profile',upload.single('img-perfil'),authentication, userController.updateProfile) 
 // logout 
 router.get('/logout',userController.logout)
-//IMPORTANTE: exportar el módulo para poder ser usado en app.js
 
 // EndPoints API
 router.get('/api/list',userController.apiUserList)

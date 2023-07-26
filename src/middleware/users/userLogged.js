@@ -6,16 +6,16 @@ async function userLoggedMiddleware(req, res, next) {
 
 	let emailInCookie=''
 	let userFromCookie
-	//verificamos si hay un email en cookie y lo obtenemos si hay
+	//verificar si hay un email en cookie y lo obtener si hay
 	if (req.cookies.email) {
 		emailInCookie = req.cookies.email;
 		userFromCookie = await  User.getUserByEmail( emailInCookie);
 	}
-	//Verificamos si hay un usuario que corresponda al email
+	//verificar si hay un usuario que corresponda al email
 	if (userFromCookie) {
 		req.session.userLogged = userFromCookie;
 	}
-	//verificamos si fue almacenado
+	//verificar si fue almacenado
 	if (req.session.userLogged) {
 		res.locals.isLogged = true;
 		res.locals.userLogged = req.session.userLogged;
