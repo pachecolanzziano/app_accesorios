@@ -4,11 +4,14 @@
 
     <div class="logo">
       <a href="/"><img src="/img/header-logo.png" alt="logo"></a>
+      <div class="nombreEmpresa" >
+        <p style="font-family: 'Dancing Script', cursive !important;">Tienda De Accesorios María Martínez</p>
+      </div>
     </div>
 
     <ul class="content-right">
       <li class="user">
-        <img src="/img/icons/icon-user.png">
+        <img src="/img/icons/icons8-user-16.png">
         <ul class="login-register">
           <% if ( locals.isLogged && (userLogged.type_id==1 || userLogged.type_id==3)) { %>
             <li>Hola, <%= userLogged.nick %>

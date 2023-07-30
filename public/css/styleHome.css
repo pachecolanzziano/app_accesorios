@@ -11,6 +11,8 @@
 
 header {
     background-color: gray;
+    border-bottom:solid 1px #916DB3;
+    
 }
 
 .navBar {
@@ -19,27 +21,34 @@ header {
     align-items: center;
     height: 70px;
     top: -1px;
-    background: #23233D;
+    background: #FDE5EC;
+    margin-left: 0px;
+    
 }
 
 .menuBurguer {
-color: #23233D
+color: #FDE5EC;
+
 }
 
 
 .logo {
-
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     position: absolute;
-    width: 100px;
-    left: 44px;
-    top: 13px;
+    width: 100%;
+    /* left: 44px; */
+    /* top: 13px; */
 }
 
 .logo img {
     width: 80%;
+}
+.nombreEmpresa {
+    color: #916DB3;
+    font-size: large;
+    text-align: justify;
 }
 
 .formBusqueda {
@@ -65,7 +74,7 @@ color: #23233D
 
 .formBusqueda .bar {
     border-color: transparent;
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     font-size: 22px;
     margin-left: 10px;
     border-radius: 30px;
@@ -76,7 +85,7 @@ color: #23233D
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    padding: 20px;
     margin-bottom: 20px;
 }
 .bar2 {
@@ -94,15 +103,16 @@ color: #23233D
     background: #FFFFFF;
     font-size: 22px;
     margin-right: 5px;
-    border-radius: 30px;
-    color: #a0a0a2;
+    padding: 2px;
+    border-radius: 40px;
+    color: #916DB3;
 }
 
 
 
 .content-right {
     display: none;
-    color: white;
+    color: #916DB3;
     font-size: 22px;
     margin-right: 2em;
 }
@@ -185,7 +195,7 @@ color: #23233D
     padding-bottom: 15px;
     width: 100%;
     min-height: 90vh;
-    background: linear-gradient(338.58deg, #28F8D3 6.21%, rgba(0, 70, 205, 0.78) 89.52%);
+    background: linear-gradient(338.58deg, #FCBAAD 6.21%, #916DB3 89.52%);
 }
 
 .fi {
@@ -214,6 +224,8 @@ color: #23233D
     font-size: 24px;
     line-height: 20px;
 }
+
+
 
 .slider div a {
     padding-left: 80px;
@@ -298,7 +310,9 @@ color: #23233D
 } */
 
 /* /MAIN */
-
+main{
+    background-color: #FDE5EC;
+}
 .options {
     text-align: center;
 }
@@ -328,13 +342,13 @@ footer {
 
 .logoFooter {
     text-align: center;
-   
 }
+
 .logoFooter h3 {
-    font-family: cursive;
+    font-family: 'Dancing Script', cursive !important;
 }
 .logoFooter img{
-    width: 150px;
+    width: 100px;
 }
 .icons{
 margin: 20px 0px;
@@ -343,8 +357,12 @@ margin: 20px 0px;
     font-size: 2rem;
     padding-left: 1rem;
 }
+.icons a{
+    color: #916DB3;
+}
+
 .contentdown-footer {
-    background-color: #0DA2E0;
+    background-color: #916DB3;
     text-align: center;
     padding: 2px 0;
     height: 2rem;
@@ -406,13 +424,20 @@ margin: 20px 0px;
         margin-bottom: 20px;
     }
 
+    .nombreEmpresa {
+        color: #916DB3;
+        font-size: large;
+        text-align: justify;
+    }
 
 }
 
 
 
 @media (min-width: 1200px) {
-
+    .logo {
+        padding-left: 5px;
+    }
     .destacados {
         flex-direction: row;
         flex-wrap: wrap;
@@ -436,4 +461,11 @@ margin: 20px 0px;
         width: 60%;
     }
 
+    .nombreEmpresa {
+        color: #916DB3;
+        font-size: xx-large;
+        text-align: justify;
+    }
+
+    
 }

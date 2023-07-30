@@ -46,12 +46,12 @@
     border-radius: 5px;
     margin-bottom: 20px;
     padding-left: 20px;
-    background-color: rgb(245, 245, 245);
+    background-color: #ffeef2;
 }
 
 .formRegisterUser button {
     margin-top: 15px;
-    background-color: #34DFB6;
+    background-color: #916DB3;
     border: none;
     border-radius: 15px;
     width: 200px;

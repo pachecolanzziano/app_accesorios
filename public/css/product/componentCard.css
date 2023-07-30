@@ -7,6 +7,7 @@
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    
 }
 
 
@@ -14,9 +15,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     box-shadow: 8px 5px 10px 3px rgba(0, 0, 0, 0.2);
     margin-bottom: 25px;
+    background-color: #F8F8F8;
+    border-radius: 16px;
+
 }
 
 .content-cards img {
@@ -24,7 +27,7 @@
 }
 
 .precio {
-    color:#15896e;
+    color:#916DB3;
     font-weight: 600;
     font-size: 18px;
     text-align: center;
@@ -49,8 +52,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #34DFB6;
+    background-color: #E48586;
     text-decoration: none;
+    border-bottom-left-radius:16px;
+    border-bottom-right-radius:16px;
 }
 
 @media (min-width: 768px) {
