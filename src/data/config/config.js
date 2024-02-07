@@ -1,7 +1,7 @@
 const DB_HOST = process.env.MYSQLHOST || "127.0.0.1";
 const DB_USER = process.env.MYSQLUSER || "root";
 const DB_PASSWORD = process.env.MYSQLPASSWORD || "";
-const DB_NAME = process.env.MYSQLNAME || "bd_project_sprints";
+const DB_NAME = process.env.MYSQLDATABASE || "bd_project_sprints";
 const DB_PORT = process.env.MYSQLPORT || "3306";
 
 module.exports={
