@@ -6,8 +6,7 @@ let router = express.Router()
 const mainController=require('../controllers/mainController')
 
 //RUTAS
-// router.get('/',mainController.index)
-router.get('/')
+router.get('/',mainController.index)
 
 // Apis para cargar selects
 router.get('/api/categories',mainController.categories)
