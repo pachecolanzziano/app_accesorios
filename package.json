@@ -4,7 +4,7 @@
   "description": "Producto/Servicio: Teléfonos móviles(Usados). Nosotros somos quienes compramos y reacondicionamos los equipos para la venta, cumpliendo con estándares de calidad y seguridad.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "dev": "nodemon app.js"
   },
   "repository": {
