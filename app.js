@@ -38,7 +38,7 @@ const methodOverride =  require('method-override');
 app.use(methodOverride('_method'));
 
 //Listen para que el server se mantenga escuchando al puerto
-app.listen(process.env.PORT || 3001,() => console.log('Server running in 3001 port'));
+app.listen(process.env.PORT || 3001,() => console.log('Server running in 8000 port'));
 
 //Configuramos la app para que trabje con EJS como motor template engine
 app.set('view engine','ejs')
