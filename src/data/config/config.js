@@ -1,8 +1,8 @@
-const DB_HOST = process.env.MYSQLHOST || "localhost";
-const DB_USER = process.env.MYSQLUSER || "id21899018_wp_08f42e77b753f7e3498fb44f4ba6d1d2";
-const DB_PASSWORD = process.env.MYSQLPASSWORD || "Karime33.";
-const DB_NAME = process.env.MYSQLDATABASE || "id21899018_wp_08f42e77b753f7e3498fb44f4ba6d1d2";
-const DB_PORT = process.env.MYSQLPORT || "4780";
+const DB_HOST = process.env.MYSQLHOST || "roundhouse.proxy.rlwy.net";
+const DB_USER = process.env.MYSQLUSER || "root";
+const DB_PASSWORD = process.env.MYSQLPASSWORD || "H--5Aa53212gAg5bfgAa1HAFEbE3CeDe";
+const DB_NAME = process.env.MYSQLDATABASE || "railway";
+const DB_PORT = process.env.MYSQLPORT || "33297";
 
 module.exports={
   "development": {
